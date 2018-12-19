@@ -6,6 +6,8 @@ import Solution02Part01 from "./challenges/2018/02/part1";
 import Solution02Part02 from "./challenges/2018/02/part2";
 import Solution03Part01 from "./challenges/2018/03/part1";
 import Solution03Part02 from "./challenges/2018/03/part2";
+import Solution04Part01 from "./challenges/2018/04/part1";
+import Solution04Part02 from "./challenges/2018/04/part2";
 
 class Calendar extends React.Component {
     state = {
@@ -101,6 +103,9 @@ class Calendar extends React.Component {
                 break;
             case 3:
                 document.write("Part 1: ", Solution03Part01(), " Part 2: ", Solution03Part02())
+                break;
+            case 4:
+                document.write("Part 1: ", Solution04Part01(), " Part 2: ", Solution04Part02())
                 break;
             default:
                 // do nothing
