@@ -1,33 +1,51 @@
 import returnInputText from "./input"
 
-var points = [];
+let points = [];
 
-function reCastToObj(squareData) {
-    var squareObj = [];
-    for (var i = 0; i < squareData.length; i++) {
-        var data = squareData[i];
-        var posX = data.substring(data.indexOf('@')+2, data.indexOf(','));
-        var posY = data.substring(data.indexOf(',')+1, data.indexOf(':'));
-        var sWidth = data.substring(data.indexOf(':')+2, data.indexOf('x'));
-        var sHeight = data.substring(data.indexOf('x')+1);
-        var xMax = parseInt(posX)+parseInt(sWidth);
-        var yMax = parseInt(posY)+parseInt(sHeight);
-        var squareObjToAdd = {
+// We'll need some helper functions for this one
+
+// Take our input and turn it into an object
+function inputToObject(inputData) {
+    let outputObj = [];
+    
+    // go through input and compile data to put into our object
+    for (let i = 0; i < inputData.length; i++) {
+        // more legible
+        let data = inputData[i];
+
+        // parse offsets
+        let posX = data.substring(data.indexOf('@')+2, data.indexOf(','));
+        let posY = data.substring(data.indexOf(',')+1, data.indexOf(':'));
+
+        // parse dimensions
+        let sWidth = data.substring(data.indexOf(':')+2, data.indexOf('x'));
+        let sHeight = data.substring(data.indexOf('x')+1);
+
+        // compute the maximum offset
+        let xMax = parseInt(posX)+parseInt(sWidth);
+        let yMax = parseInt(posY)+parseInt(sHeight);
+
+        // put it all together
+        let outputObjToAdd = {
             x: parseInt(posX),
             y: parseInt(posY),
             xMax: xMax,
             yMax: yMax
         }
-        squareObj.push(squareObjToAdd);
+        // tada
+        outputObj.push(outputObjToAdd);
     }
-    return squareObj;
+    // spit out our object
+    return outputObj;
 };
 
-function addPoints(squareObj) {
-    squareObj.forEach(point => {
-        for (var x = point.x; x < point.xMax; x++) {
-            for (var y = point.y; y < point.yMax; y++) {
-                var pointToAdd = {
+// Go through the object and use the offsets to define points
+function addPoints(outputObj) {
+    // go through each point and create a point to add to the points array
+    outputObj.forEach(point => {
+        for (let x = point.x; x < point.xMax; x++) {
+            for (let y = point.y; y < point.yMax; y++) {
+                let pointToAdd = {
                         x: x,
                         y: y
                 }
@@ -37,26 +55,44 @@ function addPoints(squareObj) {
     });
 };
 
-
+// Go through points and determine where we have overlaps
 function getNumOfDuplicates() {
     const claims = new Map();
     const overlaps = new Set();
-    for (var i = 0; i < points.length; i++) {  
-        var key = points[i].x + ":" + points[i].y;
+
+    // for each point, we'll determine if it has already been claimed
+    for (let i = 0; i < points.length; i++) {  
+        let key = points[i].x + ":" + points[i].y;
+
+        // if we have an overlap, add it to the overlaps set
         if (!(claims.has(key))) {
             claims.set(key, []);
         } else {
             overlaps.add(key);  
         }
     }
+    // return the number of overlaps
     return overlaps.size;
 };
 
+// All together now
 export default function Solution03Part01() {
+    // feed in input from AoC
     let input = returnInputText();
-    const squareData = input.split(/\n/g);
-    var squareObj = reCastToObj(squareData);
-    addPoints(squareObj);
-    var res2 = getNumOfDuplicates();
-    return res2;
+
+    // get the actual values to use
+    const inputData = input.split(/\n/g);
+
+    // create our object
+    let outputObj = inputToObject(inputData);
+
+    // populate points
+    addPoints(outputObj);
+
+    // get the number of dupes
+    let duplicates = getNumOfDuplicates();
+    
+    // return the final result
+    let result = duplicates;
+    return result;
 };
