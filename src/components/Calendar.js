@@ -67,12 +67,33 @@ class Calendar extends React.Component {
                 className={`col cell ${
                 !dateFns.isSameMonth(day, monthStart)
                     ? "disabled"
-                    : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
+                    : (dateFns.isSameDay(day, selectedDate) && (dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 6)) 
+                    ? "christmas-selected"
+                    : (dateFns.isSameDay(day, selectedDate) && (dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 7)) 
+                    ? "christmas-eve-selected"
+                    : dateFns.isSameDay(day, selectedDate) 
+                    ? "selected" 
+                    : dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 7 
+                    ? "christmas-eve" 
+                    : dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 6 
+                    ? "christmas" 
+                    : ""
                 }`}
                 key={day}
                 onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
             >
-                <span className="number">{formattedDate}</span>
+                <span className={`${ 
+                    (dateFns.isSameDay(day, selectedDate) && (dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 6)) 
+                    ? "number"
+                    : (dateFns.isSameDay(day, selectedDate) && (dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 7)) 
+                    ? "number"
+                    : dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 7 
+                    ? "christmas-text" 
+                    : dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 6 
+                    ? "christmas-text" 
+                    : "number"
+                }`}
+                    >{formattedDate}</span>
                 <span className="bg">{formattedDate}</span>
             </div>
             );

@@ -11,14 +11,14 @@ export default function Solution01Part02() {
     const seen = new Set();
     let frequency = 0;
     let result = 0;
-
+    
     // iterate through deltas and update frequency
     while (true) {
         for (const delta of deltas) {
             seen.add(frequency);
             frequency += delta;
 
-            // if frequency != 0, we'll end here.
+            // if seen has frequency, we'll end here.
             if (seen.has(frequency)) {
                 result = frequency;
                 return result;

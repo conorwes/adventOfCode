@@ -4,9 +4,12 @@
   --main-color: #1a8fff;
   --text-color: #777;
   --text-color-light: #ccc;
+  --text-color-white: #fff;
   --border-color: #eee;
   --bg-color: #b5ebff;
   --neutral-color: #fff;
+  --christmas-color: #c49300;
+  --christmas-eve-color: #c40000;
 }
 
 
@@ -186,6 +189,48 @@ body {
   top: .75em;
   right: .75em;
   font-weight: 700;
+}
+
+.calendar .body .cell .christmas-text {
+  color: var(--text-color-white);
+  position: absolute;
+  font-size: 82.5%;
+  line-height: 1;
+  top: .75em;
+  right: .75em;
+  font-weight: 700;
+}
+
+.calendar .body .christmas-eve {
+  position: relative;
+  height: 5em;
+  border-right: 1px solid var(--border-color);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--christmas-eve-color);
+  transition: 0.25s ease-out;
+}
+
+.calendar .body .christmas {
+  position: relative;
+  height: 5em;
+  border-right: 1px solid var(--border-color);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--christmas-color);
+  transition: 0.25s ease-out;
+}
+
+.calendar .body .christmas-eve-selected {
+  border-left: 10px solid transparent;
+  border-image: linear-gradient(45deg, #ff5e5e 0%, #c40000 40%);
+  border-image-slice: 1;
+}
+
+.calendar .body .christmas-selected {
+  border-left: 10px solid transparent;
+  border-image: linear-gradient(45deg, #ffd75d 0%, #c49300 40%);
+  border-image-slice: 1;
 }
 
 .calendar .body .disabled {

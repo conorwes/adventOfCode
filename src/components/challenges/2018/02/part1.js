@@ -42,6 +42,7 @@ export default function Solution02Part01() {
             }
         }
 
+        // update twos and threes accordingly
         if (counts.includes(2)) {
             twos += 1;
         }
