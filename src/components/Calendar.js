@@ -1,5 +1,11 @@
 import React from "react";
 import dateFns from "date-fns";
+import Solution01Part01 from "./challenges/2018/01/part1";
+import Solution01Part02 from "./challenges/2018/01/part2";
+import Solution02Part01 from "./challenges/2018/02/part1";
+import Solution02Part02 from "./challenges/2018/02/part2";
+import Solution03Part01 from "./challenges/2018/03/part1";
+import Solution03Part02 from "./challenges/2018/03/part2";
 
 class Calendar extends React.Component {
     state = {
@@ -84,6 +90,22 @@ class Calendar extends React.Component {
         this.setState({
           selectedDate: day
         });
+
+        switch (day.getDate())
+        {
+            case 1:
+                document.write("Part 1: ", Solution01Part01(), " Part 2: ", Solution01Part02())
+                break;
+            case 2:
+                document.write("Part 1: ", Solution02Part01(), " Part 2: ", Solution02Part02())
+                break;
+            case 3:
+                document.write("Part 1: ", Solution03Part01(), " Part 2: ", Solution03Part02())
+                break;
+            default:
+                // do nothing
+                break;
+        }
     };
 
     render() {
