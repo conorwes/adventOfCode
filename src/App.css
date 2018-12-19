@@ -8,8 +8,10 @@
   --border-color: #eee;
   --bg-color: #b5ebff;
   --neutral-color: #fff;
-  --christmas-color: #c49300;
-  --christmas-eve-color: #c40000;
+  --christmas-color: #c493008a;
+  --christmas-hover-color: #c49300; 
+  --christmas-eve-color: #c400008a;
+  --christmas-eve-hover-color: #c40000;
 }
 
 
@@ -211,6 +213,11 @@ body {
   transition: 0.25s ease-out;
 }
 
+.calendar .body .christmas-eve:hover {
+  background: var(--christmas-eve-hover-color);
+  transition: 0.5s ease-out;
+}
+
 .calendar .body .christmas {
   position: relative;
   height: 5em;
@@ -219,6 +226,11 @@ body {
   cursor: pointer;
   background: var(--christmas-color);
   transition: 0.25s ease-out;
+}
+
+.calendar .body .christmas:hover {
+  background: var(--christmas-hover-color);
+  transition: 0.5s ease-out;
 }
 
 .calendar .body .christmas-eve-selected {
