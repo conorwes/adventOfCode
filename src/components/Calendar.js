@@ -25,6 +25,9 @@ import Solution11Part02 from "./challenges/2018/11/part2";
 import Solution12Part01 from "./challenges/2018/12/part1";
 import Solution12Part02 from "./challenges/2018/12/part2";
 import Solution13Part01 from "./challenges/2018/13/part1";
+import Solution14Part01 from "./challenges/2018/14/part1";
+import Solution14Part02 from "./challenges/2018/14/part2";
+import Solution15Part01 from "./challenges/2018/15/part1";
 
 class Calendar extends React.Component {
     state = {
@@ -83,6 +86,8 @@ class Calendar extends React.Component {
             <div
                 className={`col cell ${
                 !dateFns.isSameMonth(day, monthStart)
+                    ? "disabled"
+                    : dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 18
                     ? "disabled"
                     : (dateFns.isSameDay(day, selectedDate) && (dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 6)) 
                     ? "christmas-selected"
@@ -169,8 +174,14 @@ class Calendar extends React.Component {
             case 12:
                 document.write("Part 1: ", Solution12Part01(), " Part 2: ", Solution12Part02());
                 break;
-            case 13:
+            case 13: // code is broken...will come back to this
                 document.write("Part 1: ", Solution13Part01());
+                break;
+            case 14:
+                document.write("Part 1: ", Solution14Part01(), " Part 2: ", Solution14Part02());
+                break;
+            case 15:
+                document.write("Part 2: ", Solution15Part01());
                 break;
             default:
                 // do nothing
