@@ -32,6 +32,21 @@ import Solution16Part01 from "./challenges/2018/16/part1";
 import Solution16Part02 from "./challenges/2018/16/part2";
 import Solution17Part01 from "./challenges/2018/17/part1";
 import Solution17Part02 from "./challenges/2018/17/part2";
+import Solution18Part01 from "./challenges/2018/18/part1";
+import Solution18Part02 from "./challenges/2018/18/part2";
+import Solution19Part01 from "./challenges/2018/19/part1";
+import Solution19Part02 from "./challenges/2018/19/part2";
+import Solution20Part01 from "./challenges/2018/20/part1";
+import Solution20Part02 from "./challenges/2018/20/part2";
+import Solution21Part01 from "./challenges/2018/21/part1";
+import Solution21Part02 from "./challenges/2018/21/part2";
+import Solution22Part01 from "./challenges/2018/22/part1";
+import Solution22Part02 from "./challenges/2018/22/part2";
+import Solution23Part01 from "./challenges/2018/23/part1";
+import Solution23Part02 from "./challenges/2018/23/part2";
+import Solution24Part01 from "./challenges/2018/24/part1";
+import Solution24Part02 from "./challenges/2018/24/part2";
+import Solution25Part01 from "./challenges/2018/25/part1";
 
 class Calendar extends React.Component {
     state = {
@@ -192,6 +207,30 @@ class Calendar extends React.Component {
                 break;
             case 17:
                 document.write("Part 1: ", Solution17Part01(), " Part 2: ", Solution17Part02());
+                break;
+            case 18:
+                document.write("Part 1: ", Solution18Part01(), " Part 2: ", Solution18Part02());
+                break;
+            case 19:
+                document.write("Part 1: ", Solution19Part01(), " Part 2: ", Solution19Part02());
+                break;
+            case 20:
+                document.write("Part 1: ", Solution20Part01(), " Part 2: ", Solution20Part02());
+                break;
+            case 21:
+                document.write("Part 1: ", Solution21Part01(), " Part 2: ", Solution21Part02());
+                break;
+            case 22:
+                document.write("Part 1: ", Solution22Part01(), " Part 2: ", Solution22Part02());
+                break;
+            case 23:
+                document.write("Part 1: ", Solution23Part01(), " Part 2: ", Solution23Part02());
+                break;
+            case 24:
+                document.write("Part 1: ", Solution24Part01(), " Part 2: ", Solution24Part02());
+                break;
+            case 25:
+                document.write("Part 1: ", Solution25Part01());
                 break;
             default:
                 // do nothing
