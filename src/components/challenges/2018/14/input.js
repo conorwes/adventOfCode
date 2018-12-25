@@ -1,3 +1,3 @@
-export default function returnTextInput() {
+export default function returnInputText() {
     return '607331';
 }

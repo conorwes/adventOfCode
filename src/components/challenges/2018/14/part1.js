@@ -1,7 +1,7 @@
-import returnTextInput from './input'
+import returnInputText from './input'
 
 export default function Solution14Part01() {
-    const limit = Math.trunc(Number(returnTextInput()));
+    const limit = Math.trunc(Number(returnInputText()));
 
     const recipes = [3, 7];
     const elves = [0, 1];

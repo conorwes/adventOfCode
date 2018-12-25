@@ -1,8 +1,8 @@
-import returnTextInput from './input'
+import returnInputText from './input'
 
 export default function Solution14Part01() {
-    const limit = Math.trunc(Number(returnTextInput()));
-    const length = returnTextInput().length;
+    const limit = Math.trunc(Number(returnInputText()));
+    const length = returnInputText().length;
     const mod = 10 ** length;
 
     const recipes = [3, 7];

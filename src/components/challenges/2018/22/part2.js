@@ -59,7 +59,7 @@ export default function Solution22Part02() {
     let currentElapsed = 0;
     let visited = {};
 
-    main: while(true) {
+    while(true) {
         while(path[currentElapsed] && path[currentElapsed].length) {
             let current = path[currentElapsed].shift();
 
@@ -69,7 +69,6 @@ export default function Solution22Part02() {
             if(current.x === targetX && current.y === targetY) {
                 if(current.tool === 1) {
                     return current.elapsed;
-                    break main;
                 }
                 path[current.elapsed + 7] = path[current.elapsed + 7] || [];
                 path[current.elapsed + 7].push({x: current.x, y: current.y, tool: 1, elapsed: current.elapsed + 7, route});

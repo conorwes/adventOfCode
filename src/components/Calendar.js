@@ -24,10 +24,10 @@ import Solution11Part01 from "./challenges/2018/11/part1";
 import Solution11Part02 from "./challenges/2018/11/part2";
 import Solution12Part01 from "./challenges/2018/12/part1";
 import Solution12Part02 from "./challenges/2018/12/part2";
-import Solution13Part01 from "./challenges/2018/13/part1";
+//import Solution13Part01 from "./challenges/2018/13/part1";
 import Solution14Part01 from "./challenges/2018/14/part1";
 import Solution14Part02 from "./challenges/2018/14/part2";
-import Solution15Part01 from "./challenges/2018/15/part1";
+//import Solution15Part01 from "./challenges/2018/15/part1";
 import Solution16Part01 from "./challenges/2018/16/part1";
 import Solution16Part02 from "./challenges/2018/16/part2";
 import Solution17Part01 from "./challenges/2018/17/part1";
@@ -44,8 +44,8 @@ import Solution22Part01 from "./challenges/2018/22/part1";
 import Solution22Part02 from "./challenges/2018/22/part2";
 import Solution23Part01 from "./challenges/2018/23/part1";
 import Solution23Part02 from "./challenges/2018/23/part2";
-import Solution24Part01 from "./challenges/2018/24/part1";
-import Solution24Part02 from "./challenges/2018/24/part2";
+//import Solution24Part01 from "./challenges/2018/24/part1";
+//import Solution24Part02 from "./challenges/2018/24/part2";
 import Solution25Part01 from "./challenges/2018/25/part1";
 
 class Calendar extends React.Component {
@@ -103,11 +103,22 @@ class Calendar extends React.Component {
             const cloneDay = day;
             days.push(
             <div
+                // this is ugly...clean this up
                 className={`col cell ${
                 !dateFns.isSameMonth(day, monthStart)
                     ? "disabled"
-                    : dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 18
+                    : (dateFns.getDayOfYear(day) >= (dateFns.getDaysInYear(2018) - 5)) // no solutions
+                    ? "disabled" 
+                    : (dateFns.getDayOfYear(day) === (dateFns.getDaysInYear(2018) - 18)) // no solutions
+                    ? "disabled" 
+                    : (dateFns.getDayOfYear(day) === (dateFns.getDaysInYear(2018) - 16)) // no solutions
                     ? "disabled"
+                    : (dateFns.getDayOfYear(day) === (dateFns.getDaysInYear(2018) - 10)) // too slow
+                    ? "disabled"
+                    : (dateFns.getDayOfYear(day) === (dateFns.getDaysInYear(2018) - 9)) // too slow
+                    ? "disabled"
+                    : (dateFns.getDayOfYear(day) === (dateFns.getDaysInYear(2018) - 7)) // no solutions
+                    ? "christmas-eve-disabled"
                     : (dateFns.isSameDay(day, selectedDate) && (dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 6)) 
                     ? "christmas-selected"
                     : (dateFns.isSameDay(day, selectedDate) && (dateFns.getDayOfYear(day) === dateFns.getDaysInYear(2018) - 7)) 
@@ -194,13 +205,13 @@ class Calendar extends React.Component {
                 document.write("Part 1: ", Solution12Part01(), " Part 2: ", Solution12Part02());
                 break;
             case 13: // code is broken...will come back to this
-                document.write("Part 1: ", Solution13Part01());
+                // document.write("Part 1: ", Solution13Part01());
                 break;
             case 14:
                 document.write("Part 1: ", Solution14Part01(), " Part 2: ", Solution14Part02());
                 break;
             case 15:
-                document.write("Part 1: ", Solution15Part01());
+                // document.write("Part 1: ", Solution15Part01());
                 break;
             case 16:
                 document.write("Part 1: ", Solution16Part01(), " Part 2: ", Solution16Part02());
@@ -227,7 +238,7 @@ class Calendar extends React.Component {
                 document.write("Part 1: ", Solution23Part01(), " Part 2: ", Solution23Part02());
                 break;
             case 24:
-                document.write("Part 1: ", Solution24Part01(), " Part 2: ", Solution24Part02());
+                // document.write("Part 1: ", Solution24Part01(), " Part 2: ", Solution24Part02());
                 break;
             case 25:
                 document.write("Part 1: ", Solution25Part01());

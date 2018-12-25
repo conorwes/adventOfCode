@@ -49,7 +49,6 @@ export default function Solution23Part02 () {
 
         if(searchDistance === 1) {
             return bestDistance;
-            break;
         }
         else {
             minX = bestLocation.x - searchDistance;

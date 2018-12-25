@@ -12,6 +12,7 @@
   --christmas-hover-color: #c49300; 
   --christmas-eve-color: #c400008a;
   --christmas-eve-hover-color: #c40000;
+  --christmas-eve-disabled: #9c44448a;
 }
 
 
@@ -216,6 +217,11 @@ body {
 .calendar .body .christmas-eve:hover {
   background: var(--christmas-eve-hover-color);
   transition: 0.5s ease-out;
+}
+
+.calendar .body .christmas-eve-disabled {
+  background: var(--christmas-eve-disabled);
+  pointer-events: none;
 }
 
 .calendar .body .christmas {

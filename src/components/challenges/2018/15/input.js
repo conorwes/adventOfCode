@@ -1,4 +1,4 @@
-export default function returnTextInput() {
+export default function returnInputText() {
     return `################################
 ######..#######.################
 ######...######..#.#############
