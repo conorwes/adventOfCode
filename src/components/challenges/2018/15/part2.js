@@ -1,5 +1,5 @@
 import returnInputText from './input'
 
-export default function Solution13Part01 () {
+export default function Solution15Part02 () {
     return undefined;
 };

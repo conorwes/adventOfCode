@@ -181,7 +181,10 @@ class Calendar extends React.Component {
                 document.write("Part 1: ", Solution14Part01(), " Part 2: ", Solution14Part02());
                 break;
             case 15:
-                document.write("Part 2: ", Solution15Part01());
+                document.write("Part 1: ", Solution15Part01());
+                break;
+            case 16:
+                document.write("Part 1: ", Solution15Part01());
                 break;
             default:
                 // do nothing
