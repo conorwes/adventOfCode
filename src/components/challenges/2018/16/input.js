@@ -1,5 +1,5 @@
 export default function returnInputText() {
-`Before: [2, 1, 1, 0]
+return `Before: [2, 1, 1, 0]
 5 1 0 1
 After:  [2, 0, 1, 0]
 
